@@ -1102,7 +1102,7 @@ simul_all_fun <- function(nsim,t,nbasis=30,norder=4,clus=2,true_labels,r=100){
       clust1 <- clustInd_svc(X,t,c(min(t),max(t)),as.integer(nbasis),cluster.method="kmeans", as.integer(norder),as.integer(clus),true_labels=Type)
       clasif1 <- clust1$val_indices
       t1 <- clust1$time
-      clust2 <- clustInd_svc(X,t,c(min(t),max(t)),as.integer(nbasis),cluster.method="mlKmeans", as.integer(norder),as.integer(clus),true_labels=Type)
+      clust2 <- clustInd_svc(X,t,c(min(t),max(t)),as.integer(nbasis),cluster.method="kernkmeans", as.integer(norder),as.integer(clus),true_labels=Type)
       clasif2 <- clust2$val_indices
       t2 <- clust2$time
       clust3 <- clustInd_kkmeans(X,t,c(min(t),max(t)),as.integer(nbasis),kernel="rbfdot", as.integer(norder),as.integer(clus),true_labels=Type)
